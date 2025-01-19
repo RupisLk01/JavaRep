@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="utf-8">
+    <title>Shemet Yahor</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+        }
+        .column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+        .column button {
+            background-color: purple;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        .column .small-button {
+            padding: 5px 10px;
+        }
+        .header-text {
+            text-align: center;
+            color: purple;
+            font-size: 3.125rem;
+            margin-top: 20px;
+        }
+        .source-code {
+            white-space: pre-wrap;
+            text-align: left;
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+    </style>
+    <script language="JavaScript">
+        let windows = [];
+
+        function openWindow(url, name) {
+            // Sprawdzamy, czy okno już jest otwarte, jeśli tak - zamykamy je
+            let existingWindow = windows[name];
+            if (existingWindow && !existingWindow.closed) {
+                existingWindow.close();
+            }
+
+            // Otwieramy nowe okno
+            let newWindow = window.open(url, name, "toolbar=no,directories=no,height=380,width=380,top=200,left=500");
+            
+            // Dodajemy okno do tablicy
+            windows[name] = newWindow;
+        }
+
+        function fetchSource(url, elementId) {
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(elementId).innerText = data;
+                })
+                .catch(error => {
+                    document.getElementById(elementId).innerText = `Błąd ładowania: ${error.message}`;
+                });
+        }
+    </script>
+</head>
+<body>
+    <h1 class="header-text">Szkielet zaliczeniowy JavaScript wykonał: Yahor Shemet 3g</h1>
+    <div class="container">
+        <div class="column">
+            <button onclick="openWindow('z1_shem.html', 'okienko_z1')">Otwórz z1</button>
+            <button onclick="openWindow('z2_shem.html', 'okienko_z2')">Otwórz z2</button>
+            <button onclick="openWindow('z3_shem.html', 'okienko_z3')">Otwórz z3</button>
+            <button onclick="openWindow('z4_shem.html', 'okienko_z4')">Otwórz z4</button>
+            <button onclick="openWindow('z5_shem.html', 'okienko_z5')">Otwórz z5</button>
+            <button onclick="openWindow('z6_shem.html', 'okienko_z6')">Otwórz z6</button>
+            <button onclick="openWindow('z7_shem.html', 'okienko_z7')">Otwórz z7</button>
+            <button onclick="openWindow('z8_shem.html', 'okienko_z8')">Otwórz z8</button>
+            <button onclick="openWindow('z9_shem.html', 'okienko_z9')">Otwórz z9</button>
+            <button onclick="openWindow('z10_shem.html', 'okienko_z10')">Otwórz z10</button>
+            <button onclick="openWindow('z11_shem.html', 'okienko_z11')">Otwórz z11</button>
+            <button onclick="openWindow('z12_shem.html', 'okienko_z12')">Otwórz z12</button>
+            <button onclick="openWindow('z13_shem.html', 'okienko_z13')">Otwórz z13</button>
+            <button onclick="openWindow('z14_shem.html', 'okienko_z14')">Otwórz z14</button>
+            <button onclick="openWindow('z15_shem.html', 'okienko_z15')">Otwórz z15</button>
+            <button onclick="openWindow('z16_shem.html', 'okienko_z16')">Otwórz z16</button>
+        </div>
+        <div class="column">
+            <button class="small-button" onclick="fetchSource('z1_shem.html', 'source_z1')">Zobacz kod z1</button>
+            <pre id="source_z1" class="source-code"></pre>
+            
+            <button class="small-button" onclick="fetchSource('z2_shem.html', 'source_z2')">Zobacz kod z2</button>
+            <pre id="source_z2" class="source-code"></pre>
+            
+            <button class="small-button" onclick="fetchSource('z3_shem.html', 'source_z3')">Zobacz kod z3</button>
+            <pre id="source_z3" class="source-code"></pre>
+            
+            <button class="small-button" onclick="fetchSource('z4_shem.html', 'source_z4')">Zobacz kod z4</button>
+            <pre id="source_z4" class="source-code"></pre>
+            
+            <button class="small-button" onclick="fetchSource('z5_shem.html', 'source_z5')">Zobacz kod z5</button>
+            <pre id="source_z5" class="source-code"></pre>
+            
+            <button class="small-button" onclick="fetchSource('z6_shem.html', 'source_z6')">Zobacz kod z6</button>
+            <pre id="source_z6" class="source-code"></pre>
+            
+            <button class="small-button" onclick="fetchSource('z7_shem.html', 'source_z7')">Zobacz kod z7</button>
+            <pre id="source_z7" class="source-code"></pre>
+            
+            <button class="small-button" onclick="fetchSource('z8_shem.html', 'source_z8')">Zobacz kod z8</button>
+            <pre id="source_z8" class="source-code"></pre>
+            
+            <button class="small-button" onclick="fetchSource('z9_shem.html', 'source_z9')">Zobacz kod z9</button>
+            <pre id="source_z9" class="source-code"></pre>
+            
+            <button class="small-button" onclick="fetchSource('z10_shem.html', 'source_z10')">Zobacz kod z10</button>
+            <pre id="source_z10" class="source-code"></pre>
+            
+            <button class="small-button" onclick="fetchSource('z11_shem.html', 'source_z11')">Zobacz kod z11</button>
+            <pre id="source_z11" class="source-code"></pre>
+            
+            <button class="small-button" onclick="fetchSource('z12_shem.html', 'source_z12')">Zobacz kod z12</button>
+            <pre id="source_z12" class="source-code"></pre>
+            
+            <button class="small-button" onclick="fetchSource('z13_shem.html', 'source_z13')">Zobacz kod z13</button>
+            <pre id="source_z13" class="source-code"></pre>
+            
+            <button class="small-button" onclick="fetchSource('z14_shem.html', 'source_z14')">Zobacz kod z14</button>
+            <pre id="source_z14" class="source-code"></pre>
+            
+            <button class="small-button" onclick="fetchSource('z15_shem.html', 'source_z15')">Zobacz kod z15</button>
+            <pre id="source_z15" class="source-code"></pre>
+            
+            <button class="small-button" onclick="fetchSource('z16_shem.html', 'source_z16')">Zobacz kod z16</button>
+            <pre id="source_z16" class="source-code"></pre>
+        </div>
+    </div>
+</body>
+</html>
