@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprawdzenie danych - Shemet Zadanie 47</title>
+</head>
+<body>
+    <div style="color:red; font-size:50px;">
+        <script language="JavaScript">
+            let a_shem, b_shem, c_shem;
+
+            do {
+                let liczba1 = prompt("Podaj bok a_shem:", "");
+                a_shem = parseFloat(liczba1);
+
+                let liczba2 = prompt("Podaj bok b_shem:", "");
+                b_shem = parseFloat(liczba2);
+
+                let liczba3 = prompt("Podaj bok c_shem:", "");
+                c_shem = parseFloat(liczba3);
+            } while (
+                !(a_shem > 0 && b_shem > 0 && c_shem > 0 && 
+                  (a_shem + b_shem > c_shem) && 
+                  (a_shem + c_shem > b_shem) && 
+                  (b_shem + c_shem > a_shem))
+            );
+
+            document.write("Boki trójkąta to: a_shem=" + a_shem + 
+                           ", b_shem=" + b_shem + 
+                           ", c_shem=" + c_shem + "<br>");
+        </script>
+    </div>
+</body>
+</html>
