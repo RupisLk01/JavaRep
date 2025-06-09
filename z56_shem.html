@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Zadanie 56</title>
+</head>
+<body>
+
+<h2>Zadanie 56 – Liczby pierwsze z wzoru w(i) = i² + i + 41</h2>
+<div id="output56" style="font-family: monospace;"></div>
+
+<script>
+const out56 = document.getElementById("output56");
+let lineCount = 0;
+
+for (let i = 0; i < 40; i++) {
+  let w = i * i + i + 41;
+  out56.innerHTML += `i=${i} w(${i})=${w}<br>`;
+  lineCount++;
+  if (lineCount % 5 === 0) {
+    out56.innerHTML += `<br>`;
+  }
+}
+</script>
+
+</body>
+</html>
