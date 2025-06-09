@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Zadanie 53</title>
+</head>
+<body>
+
+<h2>Zadanie 53 – Rysowanie prostokąta</h2>
+
+<!-- Formularz -->
+<label>Podaj wysokość (a): <input type="number" id="a_kow" min="3"></label><br>
+<label>Podaj szerokość (b): <input type="number" id="b_kow" min="3"></label><br><br>
+<button onclick="rysuj()">Rysuj prostokąt</button>
+
+<hr>
+<div id="output" style="font-family: monospace;"></div>
+
+<script>
+function rysuj() {
+  const a_kow = parseInt(document.getElementById("a_kow").value);
+  const b_kow = parseInt(document.getElementById("b_kow").value);
+  const output = document.getElementById("output");
+  output.innerHTML = "";
+
+  // 1. Górna krawędź
+  for (let i = 0; i < b_kow; i++) {
+    output.innerHTML += "*";
+  }
+  output.innerHTML += "<br>";
+
+  // 2. Przygotowanie wiersza środkowego
+  let wiersz_kow = "*";
+  for (let i = 1; i <= (b_kow - 2); i++) {
+    wiersz_kow += "&nbsp;&nbsp;";
+  }
+  wiersz_kow += "*";
+
+  // 3. Wyświetlanie środkowych wierszy (a_kow - 2)
+  for (let j = 0; j < a_kow - 2; j++) {
+    output.innerHTML += wiersz_kow + "<br>";
+  }
+
+  // 4. Dolna krawędź
+  for (let i = 0; i < b_kow; i++) {
+    output.innerHTML += "*";
+  }
+}
+</script>
+
+</body>
+</html>
