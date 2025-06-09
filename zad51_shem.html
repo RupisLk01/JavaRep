@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Zadanie 51</title>
+</head>
+<body>
+
+<h2>Zadanie 51 – generowanie tekstu</h2>
+
+<!-- Formularz do wpisania danych -->
+<label>Ile razy powtórzyć napis?
+  <input type="number" id="ile" min="1">
+</label>
+<br>
+<label>Twoje inicjały:
+  <input type="text" id="inicjaly">
+</label>
+<br><br>
+<button onclick="generuj()">Generuj</button>
+
+<!-- Miejsce na wynik -->
+<pre id="wynik" style="font-family: monospace; font-size: 16px;"></pre>
+
+<script>
+function generuj() {
+  const ile = parseInt(document.getElementById("ile").value);
+  const inicjaly = document.getElementById("inicjaly").value.trim();
+  const wynik = document.getElementById("wynik");
+
+  wynik.innerHTML = ""; // wyczyść poprzedni wynik
+
+  for (let i = 1; i <= ile; i++) {
+    let spacje = "&nbsp;".repeat(i); // dodaj przesunięcie
+    let linia = `${spacje}${i}_${inicjaly}_${i}`;
+    wynik.innerHTML += linia + "<br>";
+  }
+}
+</script>
+
+</body>
+</html>
