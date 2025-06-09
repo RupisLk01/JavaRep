@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Zadanie 52</title>
+</head>
+<body>
+
+<h2>Zadanie 52 – rysowanie prostokąta z gwiazdek</h2>
+
+<pre id="prostokat" style="font-family: monospace; font-size: 16px;"></pre>
+
+<script>
+// Dane użytkownika
+const imie = "Yahor";
+const nazwisko = "Shemet";
+
+// Obliczanie wymiarów
+const a_kow = (nazwisko.length % 4) + 5; // wysokość prostokąta
+const b_kow = (imie.length % 6) + 20;    // szerokość prostokąta
+
+let wynik = "";
+
+// 1. Górna krawędź
+for (let i = 0; i < b_kow; i++) {
+  wynik += "*";
+}
+wynik += "\n";
+
+// 2. Środek prostokąta (a_kow - 2 wiersze)
+for (let j = 0; j < a_kow - 2; j++) {
+  wynik += "*";
+  for (let k = 0; k < b_kow - 2; k++) {
+    wynik += " ";
+  }
+  wynik += "*\n";
+}
+
+// 3. Dolna krawędź
+for (let i = 0; i < b_kow; i++) {
+  wynik += "*";
+}
+
+// Wyświetlenie wyniku
+document.getElementById("prostokat").innerText = wynik;
+</script>
+
+</body>
+</html>
