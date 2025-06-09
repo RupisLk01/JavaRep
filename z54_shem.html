@@ -1,0 +1,60 @@
+Oto wersja kodu **bez komentarzy** do Zadania 54:
+
+```html
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Zadanie 54</title>
+</head>
+<body>
+
+<h2>Zadanie 54 – Rysowanie prostokąta</h2>
+
+<label>Imię: <input type="text" id="imie"></label><br>
+<label>Nazwisko: <input type="text" id="nazwisko"></label><br><br>
+<button onclick="rysuj()">Rysuj prostokąt</button>
+
+<hr>
+<div id="output" style="font-family: monospace;"></div>
+
+<script>
+function rysuj() {
+  const imie = document.getElementById("imie").value.trim();
+  const nazwisko = document.getElementById("nazwisko").value.trim();
+  const output = document.getElementById("output");
+
+  if (imie === "" || nazwisko === "") {
+    output.innerHTML = "Wpisz imię i nazwisko.";
+    return;
+  }
+
+  const a = (nazwisko.length % 4) + 5;
+  const b = (imie.length % 6) + 20;
+
+  let wynik = "";
+
+  for (let i = 0; i < b; i++) {
+    wynik += "*";
+  }
+  wynik += "<br>";
+
+  for (let i = 0; i < a - 2; i++) {
+    wynik += "*";
+    for (let j = 0; j < b - 2; j++) {
+      wynik += "&nbsp;";
+    }
+    wynik += "*<br>";
+  }
+
+  for (let i = 0; i < b; i++) {
+    wynik += "*";
+  }
+
+  output.innerHTML = wynik;
+}
+</script>
+
+</body>
+</html>
+```
