@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Zadanie 57</title>
+</head>
+<body>
+
+<h2>Zadanie 57 – Pierwiastki drugiego i czwartego stopnia</h2>
+<div id="output57" style="font-family: monospace;"></div>
+
+<script>
+const out57 = document.getElementById("output57");
+const numer_dziennika = 4;
+let lineCount = 0;
+
+for (let i = numer_dziennika; i <= numer_dziennika + 15; i++) {
+  let pierw2 = Math.sqrt(i).toFixed(2);
+  let pierw4 = Math.sqrt(Math.sqrt(i)).toFixed(2);
+  out57.innerHTML += `I=${i} pierw_2(${i})=${pierw2} pierw_4(${i})=${pierw4}<br>`;
+  lineCount++;
+  if (lineCount % 3 === 0) {
+    out57.innerHTML += `<br>`;
+  }
+}
+</script>
+
+</body>
+</html>
